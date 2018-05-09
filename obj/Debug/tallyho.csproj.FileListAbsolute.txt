@@ -1,0 +1,16 @@
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\tallyho.exe.config
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\tallyho.exe
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\tallyho.pdb
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csprojResolveAssemblyReference.cache
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\MainWindow.g.cs
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\App.g.cs
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho_MarkupCompile.cache
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho_MarkupCompile.lref
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\App.baml
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\MainWindow.baml
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.g.resources
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.Properties.Resources.resources
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csproj.GenerateResource.cache
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csproj.CoreCompileInputs.cache
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.exe
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.pdb

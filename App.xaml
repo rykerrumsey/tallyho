@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:tallyho"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="PanelBackground" Color="#535353"></SolidColorBrush>
+        <SolidColorBrush x:Key="WindowBackground" Color="#292C33"></SolidColorBrush>
+        <SolidColorBrush x:Key="ContentForeground">#363942</SolidColorBrush>
+        <SolidColorBrush x:Key="TextColor">#91959e</SolidColorBrush>
+        <SolidColorBrush x:Key="TextHighlight">#f8f9fb</SolidColorBrush>
+        <SolidColorBrush x:Key="Accent">#ec9d1c</SolidColorBrush>
+        <SolidColorBrush x:Key="Success">#6b9d1c</SolidColorBrush>
+        <SolidColorBrush x:Key="Fail">#ec231c</SolidColorBrush>
     </Application.Resources>
 </Application>
