@@ -1,7 +1,6 @@
 C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\tallyho.exe.config
 C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\tallyho.exe
 C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\tallyho.pdb
-C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csprojResolveAssemblyReference.cache
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\MainWindow.g.cs
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\App.g.cs
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho_MarkupCompile.cache
@@ -14,3 +13,5 @@ C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csproj.GenerateResou
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csproj.CoreCompileInputs.cache
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.exe
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.pdb
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csprojAssemblyReference.cache
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Dictionary1.baml
