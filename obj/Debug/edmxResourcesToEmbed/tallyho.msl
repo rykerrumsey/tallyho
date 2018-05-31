@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tallyhoStoreContainer" CdmEntityContainer="TallyHoDb">
+    <EntitySetMapping Name="Casings">
+      <EntityTypeMapping TypeName="tallyho.Casing">
+        <MappingFragment StoreEntitySet="Casing">
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="JointNumber" ColumnName="JointNumber" />
+          <ScalarProperty Name="StringId" ColumnName="StringId" />
+          <ScalarProperty Name="CasingId" ColumnName="CasingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Strings">
+      <EntityTypeMapping TypeName="tallyho.String">
+        <MappingFragment StoreEntitySet="String">
+          <ScalarProperty Name="RunType" ColumnName="RunType" />
+          <ScalarProperty Name="DateMeasured" ColumnName="DateMeasured" />
+          <ScalarProperty Name="MeasuredBy" ColumnName="MeasuredBy" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="CasingType" ColumnName="CasingType" />
+          <ScalarProperty Name="WellId" ColumnName="WellId" />
+          <ScalarProperty Name="StringId" ColumnName="StringId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Wells">
+      <EntityTypeMapping TypeName="tallyho.Well">
+        <MappingFragment StoreEntitySet="Well">
+          <ScalarProperty Name="RigCompany" ColumnName="RigCompany" />
+          <ScalarProperty Name="RigNumber" ColumnName="RigNumber" />
+          <ScalarProperty Name="ServiceProvider" ColumnName="ServiceProvider" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="WellId" ColumnName="WellId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

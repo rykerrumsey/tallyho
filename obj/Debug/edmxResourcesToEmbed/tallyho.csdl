@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="tallyho" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="TallyHoDb" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Casings" EntityType="tallyho.Casing" />
+    <EntitySet Name="Strings" EntityType="tallyho.String" />
+    <EntitySet Name="Wells" EntityType="tallyho.Well" />
+    <AssociationSet Name="string1" Association="tallyho.string1">
+      <End Role="String" EntitySet="Strings" />
+      <End Role="Casing" EntitySet="Casings" />
+    </AssociationSet>
+    <AssociationSet Name="well1" Association="tallyho.well1">
+      <End Role="Well" EntitySet="Wells" />
+      <End Role="String" EntitySet="Strings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Casing">
+    <Key>
+      <PropertyRef Name="CasingId" />
+    </Key>
+    <Property Name="CasingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StringId" Type="Int32" Nullable="false" />
+    <Property Name="JointNumber" Type="Int32" Nullable="false" />
+    <Property Name="Length" Type="Double" Nullable="false" />
+    <NavigationProperty Name="String" Relationship="tallyho.string1" FromRole="Casing" ToRole="String" />
+  </EntityType>
+  <EntityType Name="String">
+    <Key>
+      <PropertyRef Name="StringId" />
+    </Key>
+    <Property Name="StringId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WellId" Type="Int32" Nullable="false" />
+    <Property Name="CasingType" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Weight" Type="Double" Nullable="false" />
+    <Property Name="Size" Type="Double" Nullable="false" />
+    <Property Name="MeasuredBy" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="DateMeasured" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RunType" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Casings" Relationship="tallyho.string1" FromRole="String" ToRole="Casing" />
+    <NavigationProperty Name="Well" Relationship="tallyho.well1" FromRole="String" ToRole="Well" />
+  </EntityType>
+  <EntityType Name="Well">
+    <Key>
+      <PropertyRef Name="WellId" />
+    </Key>
+    <Property Name="WellId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="RigNumber" Type="Int32" Nullable="false" />
+    <Property Name="RigCompany" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Strings" Relationship="tallyho.well1" FromRole="Well" ToRole="String" />
+  </EntityType>
+  <Association Name="string1">
+    <End Type="tallyho.String" Role="String" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="tallyho.Casing" Role="Casing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="String">
+        <PropertyRef Name="StringId" />
+      </Principal>
+      <Dependent Role="Casing">
+        <PropertyRef Name="StringId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="well1">
+    <End Type="tallyho.Well" Role="Well" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="tallyho.String" Role="String" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Well">
+        <PropertyRef Name="WellId" />
+      </Principal>
+      <Dependent Role="String">
+        <PropertyRef Name="WellId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

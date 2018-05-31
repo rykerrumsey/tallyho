@@ -13,5 +13,15 @@ C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csproj.GenerateResou
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csproj.CoreCompileInputs.cache
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.exe
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.pdb
-C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csprojAssemblyReference.cache
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Dictionary1.baml
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\EntityFramework.dll
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\EntityFramework.xml
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csproj.CopyComplete
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho_Content.g.cs
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csprojAssemblyReference.cache
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\tallyho.sdf

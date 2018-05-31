@@ -23,6 +23,21 @@ namespace tallyho
         public MainWindow()
         {
             InitializeComponent();
+
+            using (var db = new TallyHoDb())
+            {                
+                Casing joint = new Casing
+                {
+                    StringId = 3,
+                    CasingId = db.Casings.Count() + 1,
+                    JointNumber = 1,
+                    Length = 20.44
+                };
+
+                db.Casings.Add(joint);
+                db.SaveChanges();
+                db.Dispose();
+            }
         }
     }
 }

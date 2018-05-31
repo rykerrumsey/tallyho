@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tallyho.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Casing">
+    <Key>
+      <PropertyRef Name="CasingId" />
+    </Key>
+    <Property Name="CasingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StringId" Type="int" Nullable="false" />
+    <Property Name="JointNumber" Type="int" Nullable="false" />
+    <Property Name="Length" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="String">
+    <Key>
+      <PropertyRef Name="StringId" />
+    </Key>
+    <Property Name="StringId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WellId" Type="int" Nullable="false" />
+    <Property Name="CasingType" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Weight" Type="float" Nullable="false" />
+    <Property Name="Size" Type="float" Nullable="false" />
+    <Property Name="MeasuredBy" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="DateMeasured" Type="datetime" Nullable="false" />
+    <Property Name="RunType" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Well">
+    <Key>
+      <PropertyRef Name="WellId" />
+    </Key>
+    <Property Name="WellId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ServiceProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RigNumber" Type="int" Nullable="false" />
+    <Property Name="RigCompany" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <Association Name="string1">
+    <End Role="String" Type="Self.String" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Casing" Type="Self.Casing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="String">
+        <PropertyRef Name="StringId" />
+      </Principal>
+      <Dependent Role="Casing">
+        <PropertyRef Name="StringId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="well1">
+    <End Role="Well" Type="Self.Well" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="String" Type="Self.String" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Well">
+        <PropertyRef Name="WellId" />
+      </Principal>
+      <Dependent Role="String">
+        <PropertyRef Name="WellId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="tallyhoStoreContainer">
+    <EntitySet Name="Casing" EntityType="Self.Casing" store:Type="Tables" />
+    <EntitySet Name="String" EntityType="Self.String" store:Type="Tables" />
+    <EntitySet Name="Well" EntityType="Self.Well" store:Type="Tables" />
+    <AssociationSet Name="string1" Association="Self.string1">
+      <End Role="String" EntitySet="String" />
+      <End Role="Casing" EntitySet="Casing" />
+    </AssociationSet>
+    <AssociationSet Name="well1" Association="Self.well1">
+      <End Role="Well" EntitySet="Well" />
+      <End Role="String" EntitySet="String" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
