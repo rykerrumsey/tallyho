@@ -23,5 +23,14 @@ C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\EntityFramework.SqlServer.xm
 C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\EntityFramework.SqlServerCompact.xml
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csproj.CopyComplete
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho_Content.g.cs
-C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csprojAssemblyReference.cache
 C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\tallyho.sdf
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\InfoView.g.cs
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\SearchView.g.cs
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\SettingsView.g.cs
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\TallyView.g.cs
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\InfoView.baml
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\SearchView.baml
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\SettingsView.baml
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\TallyView.baml
+C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csprojAssemblyReference.cache

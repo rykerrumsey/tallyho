@@ -1,0 +1,55 @@
+{
+  "wellData": {
+    "companyName": "conaco",
+    "lsd": "G8-33-78-18W6M",
+    "wellName": "arc resources hz sunrise",
+    "afe": "180RL0025",
+    "rigContractor": "Precision Drilling",
+    "rigNumber": "542",
+    "serviceProvider": "Scott Seltenrich Consulting"
+  },
+  "stringData": [
+    {
+      "metaData": {
+        "runType": "production",
+        "stringPosition": 1,
+        "dateMeasured": "2018-05-14 22:13:12",
+        "measuredBy": "rodger"
+      },
+      "casingType": "LTC",
+      "size": "4.5",
+      "weight": "13",
+      "tally": [
+        {
+          "length": 12.33,
+          "time": "18:25:14"
+        },
+        {
+          "length": 13.34,
+          "time": "18:25:20"
+        }
+      ]
+    },
+    {
+      "metaData": {
+        "runType": "production",
+        "stringPosition": 1,
+        "dateMeasured": "2018-05-14 22:13:12",
+        "measuredBy": "rodger"
+      },
+      "casingType": "LTC",
+      "size": "4.5",
+      "weight": "13",
+      "tally": [
+        {
+          "length": 12.33,
+          "time": "18:25:14"
+        },
+        {
+          "length": 13.34,
+          "time": "18:25:20"
+        }
+      ]
+    }
+  ]
+}
