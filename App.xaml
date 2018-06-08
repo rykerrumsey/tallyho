@@ -4,13 +4,68 @@
              xmlns:local="clr-namespace:tallyho"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <SolidColorBrush x:Key="PanelBackground" Color="#535353"></SolidColorBrush>
-        <SolidColorBrush x:Key="WindowBackground" Color="#292C33"></SolidColorBrush>
+        
+        <!-- Application Color Defaults -->
+        <SolidColorBrush x:Key="PanelBackground">#535353</SolidColorBrush>
+        <SolidColorBrush x:Key="WindowBackground">#292C33</SolidColorBrush>
         <SolidColorBrush x:Key="ContentForeground">#363942</SolidColorBrush>
         <SolidColorBrush x:Key="TextColor">#91959e</SolidColorBrush>
         <SolidColorBrush x:Key="TextHighlight">#f8f9fb</SolidColorBrush>
         <SolidColorBrush x:Key="Accent">#ec9d1c</SolidColorBrush>
         <SolidColorBrush x:Key="Success">#6b9d1c</SolidColorBrush>
         <SolidColorBrush x:Key="Fail">#ec231c</SolidColorBrush>
+
+        <!-- DockPanel Style -->
+        <Style TargetType="DockPanel">
+            <Setter Property="Background" Value="{StaticResource ContentForeground}" />
+        </Style>
+
+        <!-- StackPanel Style -->
+        <Style TargetType="StackPanel">
+            <Setter Property="Background" Value="{StaticResource ContentForeground}" />
+        </Style>
+
+        <!-- Default Button Style -->
+        <Style x:Key="DefaultButton" TargetType="Button">
+            
+        </Style>
+        
+        <!-- DockPanel Button Style -->
+        <Style x:Key="DockPanelButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Width" Value="50" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Padding" Value="15"></Setter>
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="{StaticResource WindowBackground}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="DockPanelButtonBorder" Background="{TemplateBinding Background}">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="BorderThickness" Value="5,0,0,0"></Setter>
+                                    <Setter Property="Padding" Value="13"></Setter>
+
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="BorderBrush" Value="{StaticResource Accent}"></Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource ContentForeground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
     </Application.Resources>
 </Application>

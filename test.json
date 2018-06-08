@@ -33,11 +33,32 @@
     {
       "metaData": {
         "runType": "production",
-        "stringPosition": 1,
+        "stringPosition": 2,
         "dateMeasured": "2018-05-14 22:13:12",
         "measuredBy": "rodger"
       },
-      "casingType": "LTC",
+      "casingType": "Cross Overs",
+      "size": "4.5",
+      "weight": "13",
+      "tally": [
+        {
+          "length": 12.33,
+          "time": "18:25:14"
+        },
+        {
+          "length": 13.34,
+          "time": "18:25:20"
+        }
+      ]
+    },
+    {
+      "metaData": {
+        "runType": "production",
+        "stringPosition": 3,
+        "dateMeasured": "2018-05-14 22:13:12",
+        "measuredBy": "rodger"
+      },
+      "casingType": "VA Roughneck",
       "size": "4.5",
       "weight": "13",
       "tally": [

@@ -13,6 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using tallyho.ViewModels;
+using System.IO;
+using Microsoft.Win32;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using tallyho.Models;
 
 namespace tallyho
 {
@@ -21,6 +26,8 @@ namespace tallyho
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string json;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,9 +38,6 @@ namespace tallyho
             // view well info
             // casing tally view
             // settings window
-
-            // import .json file
-
 
             // search database for well, date
             // recent wells that were opened
@@ -61,7 +65,7 @@ namespace tallyho
             // - editbale wells
             // - printing wells
             // - more casing type info
-
+            
             using (var db = new TallyHoDb())
             {                
                 Casing joint = new Casing
@@ -96,6 +100,39 @@ namespace tallyho
         private void btnSettings_Click(object sender, EventArgs e)
         {
             DataContext = new SettingsViewModel();
+        }
+
+        private void btnImportJson_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "JSON files (*.json)|*.json",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                json = File.ReadAllText(openFileDialog.FileName);
+
+                // if partial is selected just extract stringData from JSON file
+                JObject partial = JObject.Parse(json);
+                IList<JToken> results = partial["stringData"].Children().ToList();
+
+                IList<StringData> stringData = new List<StringData>();
+
+                foreach (JToken result in results)
+                {
+                    StringData strings = result.ToObject<StringData>();
+                    stringData.Add(strings);
+                }
+
+                var singlejt = stringData[0].Tally[0].Length;
+
+                // if full welldata is selected present the entire object
+                CasingString deserializeTally = JsonConvert.DeserializeObject<CasingString>(json);
+
+
+            }
         }
 
     }

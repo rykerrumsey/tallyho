@@ -18,6 +18,7 @@ namespace tallyho
         public int StringId { get; set; }
         public int JointNumber { get; set; }
         public double Length { get; set; }
+        public string TimeMeasured { get; set; }
     
         public virtual String String { get; set; }
     }

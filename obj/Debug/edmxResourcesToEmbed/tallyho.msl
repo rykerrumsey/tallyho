@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Casings">
       <EntityTypeMapping TypeName="tallyho.Casing">
         <MappingFragment StoreEntitySet="Casing">
+          <ScalarProperty Name="TimeMeasured" ColumnName="TimeMeasured" />
           <ScalarProperty Name="Length" ColumnName="Length" />
           <ScalarProperty Name="JointNumber" ColumnName="JointNumber" />
           <ScalarProperty Name="StringId" ColumnName="StringId" />
@@ -14,6 +15,7 @@
     <EntitySetMapping Name="Strings">
       <EntityTypeMapping TypeName="tallyho.String">
         <MappingFragment StoreEntitySet="String">
+          <ScalarProperty Name="StringPosition" ColumnName="StringPosition" />
           <ScalarProperty Name="RunType" ColumnName="RunType" />
           <ScalarProperty Name="DateMeasured" ColumnName="DateMeasured" />
           <ScalarProperty Name="MeasuredBy" ColumnName="MeasuredBy" />

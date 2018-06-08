@@ -28,6 +28,7 @@ namespace tallyho
         public string MeasuredBy { get; set; }
         public System.DateTime DateMeasured { get; set; }
         public string RunType { get; set; }
+        public Nullable<int> StringPosition { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Casing> Casings { get; set; }

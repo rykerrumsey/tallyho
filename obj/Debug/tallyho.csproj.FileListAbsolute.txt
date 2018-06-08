@@ -34,3 +34,13 @@ C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\SearchView.baml
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\SettingsView.baml
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\Views\TallyView.baml
 C:\Users\rykerrumsey\source\repos\tallyho\obj\Debug\tallyho.csprojAssemblyReference.cache
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\Newtonsoft.Json.dll
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\Newtonsoft.Json.xml
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\xunit.abstractions.dll
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\xunit.assert.dll
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\xunit.core.dll
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\xunit.execution.desktop.dll
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\xunit.abstractions.xml
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\xunit.assert.xml
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\xunit.core.xml
+C:\Users\rykerrumsey\source\repos\tallyho\bin\Debug\xunit.execution.desktop.xml

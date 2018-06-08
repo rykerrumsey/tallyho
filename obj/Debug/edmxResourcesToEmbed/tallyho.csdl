@@ -21,6 +21,7 @@
     <Property Name="StringId" Type="Int32" Nullable="false" />
     <Property Name="JointNumber" Type="Int32" Nullable="false" />
     <Property Name="Length" Type="Double" Nullable="false" />
+    <Property Name="TimeMeasured" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="String" Relationship="tallyho.string1" FromRole="Casing" ToRole="String" />
   </EntityType>
   <EntityType Name="String">
@@ -35,6 +36,7 @@
     <Property Name="MeasuredBy" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="DateMeasured" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="RunType" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="StringPosition" Type="Int32" />
     <NavigationProperty Name="Casings" Relationship="tallyho.string1" FromRole="String" ToRole="Casing" />
     <NavigationProperty Name="Well" Relationship="tallyho.well1" FromRole="String" ToRole="Well" />
   </EntityType>

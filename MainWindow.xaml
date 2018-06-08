@@ -21,62 +21,19 @@
         <DataTemplate x:Name="settingsViewTemplate" DataType="{x:Type viewmodels:SettingsViewModel}">
             <views:SettingsView DataContext="{Binding}" />
         </DataTemplate>
-        <Style x:Key="DockPanelButton" TargetType="Button">
-            <Setter Property="OverridesDefaultStyle" Value="True" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="Width" Value="50" />
-            <Setter Property="Height" Value="50" />
-            <Setter Property="Padding" Value="15"></Setter>
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Background" Value="{StaticResource WindowBackground}"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Name="DockPanelButtonBorder" Background="{TemplateBinding Background}">
-                            <Border.Style>
-                                <Style TargetType="Border">
-                                    <Setter Property="BorderThickness" Value="5,0,0,0"></Setter>
-                                    <Setter Property="Padding" Value="13"></Setter>
-
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="BorderBrush" Value="{StaticResource Accent}"></Setter>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Border.Style>
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource ContentForeground}" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style TargetType="DockPanel">
-            <Setter Property="Background" Value="{StaticResource ContentForeground}"></Setter>
-        </Style>
-        <Style TargetType="StackPanel">
-            <Setter Property="Background" Value="{StaticResource ContentForeground}" />
-
-
-        </Style>
     </Window.Resources>
 
     <DockPanel>
         <Grid DockPanel.Dock="Top" Height="50" Background="{StaticResource WindowBackground}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="184*"/>
+                <ColumnDefinition Width="727*"/>
+                <ColumnDefinition Width="82*"/>
             </Grid.ColumnDefinitions>
-            <Image x:Name="LogoImage" Margin="8,8,152,8" Source="Resources/logo.png" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBlock x:Name="VersionTextBlock" TextWrapping="Wrap" Text="version 0.1.0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource TextHighlight}" FontSize="10" Margin="110,20,87.667,20" Width="57"/>
-            <Button x:Name="ImportButton" Content="Import" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Grid.Column="2" Width="60" Height="30" Grid.Row="30" BorderBrush="{DynamicResource Accent}" BorderThickness="3" Background="{DynamicResource ContentForeground}" Foreground="{DynamicResource TextHighlight}"/>
-
+            <Image x:Name="LogoImage" Margin="8,8,0,8" Source="Resources/logo.png" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34" Width="89"/>
+            <TextBlock x:Name="VersionTextBlock" TextWrapping="Wrap" Text="version 0.1.0" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{DynamicResource TextHighlight}" FontSize="10" Margin="110,18,0,18" Width="57" Height="14"/>
+            <Button x:Name="ImportButton" Style="{StaticResource DefaultButton}" Content="Import" HorizontalAlignment="Right" Margin="0,10,10.333,10" VerticalAlignment="Center" Grid.Column="2" Width="60" Height="30" BorderBrush="{DynamicResource Accent}" BorderThickness="3" Background="{DynamicResource ContentForeground}" Foreground="{DynamicResource TextHighlight}" Click="btnImportJson_Click"/>
+            <TextBlock x:Name="CurrentWellTitle" Margin="30,15,30,15" VerticalAlignment="Center" Foreground="{DynamicResource TextHighlight}" HorizontalAlignment="Center" Width="667" FontSize="16" Height="25" Grid.Column="1"><Run Text=" "/><Run Text="No well selected."/></TextBlock>
         </Grid>
         <StackPanel DockPanel.Dock="Left" Width="50" HorizontalAlignment="Left" Background="{StaticResource WindowBackground}">
             <Button Style="{StaticResource DockPanelButton}" Click="btnSearch_Click">
@@ -89,7 +46,7 @@
                 <Path Name="Tally" Stretch="Uniform" Fill="{StaticResource Accent}" Data="M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM96 424c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-96c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm96-192c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm128 368c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16zm0-96c0 4.4-3.6 8-8 8H168c-4.4 0-8-3.6-8-8v-16c0-4.4 3.6-8 8-8h144c4.4 0 8 3.6 8 8v16z"/>
             </Button>
             <Button Style="{StaticResource DockPanelButton}" IsEnabled="True" Click="btnSettings_Click">
-                <Path Name="Settings" Stretch="Uniform" Fill="{StaticResource Accent}" Data="M444.788 291.1l42.616 24.599c4.867 2.809 7.126 8.618 5.459 13.985-11.07 35.642-29.97 67.842-54.689 94.586a12.016 12.016 0 0 1-14.832 2.254l-42.584-24.595a191.577 191.577 0 0 1-60.759 35.13v49.182a12.01 12.01 0 0 1-9.377 11.718c-34.956 7.85-72.499 8.256-109.219.007-5.49-1.233-9.403-6.096-9.403-11.723v-49.184a191.555 191.555 0 0 1-60.759-35.13l-42.584 24.595a12.016 12.016 0 0 1-14.832-2.254c-24.718-26.744-43.619-58.944-54.689-94.586-1.667-5.366.592-11.175 5.459-13.985L67.212 291.1a193.48 193.48 0 0 1 0-70.199l-42.616-24.599c-4.867-2.809-7.126-8.618-5.459-13.985 11.07-35.642 29.97-67.842 54.689-94.586a12.016 12.016 0 0 1 14.832-2.254l42.584 24.595a191.577 191.577 0 0 1 60.759-35.13V25.759a12.01 12.01 0 0 1 9.377-11.718c34.956-7.85 72.499-8.256 109.219-.007 5.49 1.233 9.403 6.096 9.403 11.723v49.184a191.555 191.555 0 0 1 60.759 35.13l42.584-24.595a12.016 12.016 0 0 1 14.832 2.254c24.718 26.744 43.619 58.944 54.689 94.586 1.667 5.366-.592 11.175-5.459 13.985L444.788 220.9a193.485 193.485 0 0 1 0 70.2zM336 256c0-44.112-35.888-80-80-80s-80 35.888-80 80 35.888 80 80 80 80-35.888 80-80z" IsEnabled="False"/>
+                <Path Name="Settings" Stretch="Uniform" Fill="{StaticResource Accent}" Data="M444.788 291.1l42.616 24.599c4.867 2.809 7.126 8.618 5.459 13.985-11.07 35.642-29.97 67.842-54.689 94.586a12.016 12.016 0 0 1-14.832 2.254l-42.584-24.595a191.577 191.577 0 0 1-60.759 35.13v49.182a12.01 12.01 0 0 1-9.377 11.718c-34.956 7.85-72.499 8.256-109.219.007-5.49-1.233-9.403-6.096-9.403-11.723v-49.184a191.555 191.555 0 0 1-60.759-35.13l-42.584 24.595a12.016 12.016 0 0 1-14.832-2.254c-24.718-26.744-43.619-58.944-54.689-94.586-1.667-5.366.592-11.175 5.459-13.985L67.212 291.1a193.48 193.48 0 0 1 0-70.199l-42.616-24.599c-4.867-2.809-7.126-8.618-5.459-13.985 11.07-35.642 29.97-67.842 54.689-94.586a12.016 12.016 0 0 1 14.832-2.254l42.584 24.595a191.577 191.577 0 0 1 60.759-35.13V25.759a12.01 12.01 0 0 1 9.377-11.718c34.956-7.85 72.499-8.256 109.219-.007 5.49 1.233 9.403 6.096 9.403 11.723v49.184a191.555 191.555 0 0 1 60.759 35.13l42.584-24.595a12.016 12.016 0 0 1 14.832 2.254c24.718 26.744 43.619 58.944 54.689 94.586 1.667 5.366-.592 11.175-5.459 13.985L444.788 220.9a193.485 193.485 0 0 1 0 70.2zM336 256c0-44.112-35.888-80-80-80s-80 35.888-80 80 35.888 80 80 80 80-35.888 80-80z" />
             </Button>
         </StackPanel>
         <ContentControl Content="{Binding}" />

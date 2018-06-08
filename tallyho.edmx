@@ -13,6 +13,7 @@
           <Property Name="StringId" Type="int" Nullable="false" />
           <Property Name="JointNumber" Type="int" Nullable="false" />
           <Property Name="Length" Type="float" Nullable="false" />
+          <Property Name="TimeMeasured" Type="nvarchar" MaxLength="128" />
         </EntityType>
         <EntityType Name="String">
           <Key>
@@ -26,6 +27,7 @@
           <Property Name="MeasuredBy" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="DateMeasured" Type="datetime" Nullable="false" />
           <Property Name="RunType" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="StringPosition" Type="int" />
         </EntityType>
         <EntityType Name="Well">
           <Key>
@@ -104,6 +106,7 @@
           <Property Name="StringId" Type="Int32" Nullable="false" />
           <Property Name="JointNumber" Type="Int32" Nullable="false" />
           <Property Name="Length" Type="Double" Nullable="false" />
+          <Property Name="TimeMeasured" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="String" Relationship="tallyho.string1" FromRole="Casing" ToRole="String" />
         </EntityType>
         <EntityType Name="String">
@@ -118,6 +121,7 @@
           <Property Name="MeasuredBy" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="DateMeasured" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="RunType" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="StringPosition" Type="Int32" />
           <NavigationProperty Name="Casings" Relationship="tallyho.string1" FromRole="String" ToRole="Casing" />
           <NavigationProperty Name="Well" Relationship="tallyho.well1" FromRole="String" ToRole="Well" />
         </EntityType>
@@ -170,6 +174,7 @@
           <EntitySetMapping Name="Casings">
             <EntityTypeMapping TypeName="tallyho.Casing">
               <MappingFragment StoreEntitySet="Casing">
+                <ScalarProperty Name="TimeMeasured" ColumnName="TimeMeasured" />
                 <ScalarProperty Name="Length" ColumnName="Length" />
                 <ScalarProperty Name="JointNumber" ColumnName="JointNumber" />
                 <ScalarProperty Name="StringId" ColumnName="StringId" />
@@ -180,6 +185,7 @@
           <EntitySetMapping Name="Strings">
             <EntityTypeMapping TypeName="tallyho.String">
               <MappingFragment StoreEntitySet="String">
+                <ScalarProperty Name="StringPosition" ColumnName="StringPosition" />
                 <ScalarProperty Name="RunType" ColumnName="RunType" />
                 <ScalarProperty Name="DateMeasured" ColumnName="DateMeasured" />
                 <ScalarProperty Name="MeasuredBy" ColumnName="MeasuredBy" />

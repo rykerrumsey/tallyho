@@ -8,6 +8,7 @@
     <Property Name="StringId" Type="int" Nullable="false" />
     <Property Name="JointNumber" Type="int" Nullable="false" />
     <Property Name="Length" Type="float" Nullable="false" />
+    <Property Name="TimeMeasured" Type="nvarchar" MaxLength="128" />
   </EntityType>
   <EntityType Name="String">
     <Key>
@@ -21,6 +22,7 @@
     <Property Name="MeasuredBy" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="DateMeasured" Type="datetime" Nullable="false" />
     <Property Name="RunType" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="StringPosition" Type="int" />
   </EntityType>
   <EntityType Name="Well">
     <Key>

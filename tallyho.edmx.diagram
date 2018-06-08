@@ -7,7 +7,7 @@
       <Diagram DiagramId="9d5ac37ccf5c48fd9e38de8afdabe121" Name="Diagram1" >
         <EntityTypeShape EntityType="tallyho.Casing" Width="1.5" PointX="5.25" PointY="1.5" />
         <EntityTypeShape EntityType="tallyho.String" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="tallyho.Well" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="tallyho.Well" Width="1.5" PointX="0.75" PointY="1.375" />
         <AssociationConnector Association="tallyho.string1" />
         <AssociationConnector Association="tallyho.well1" />
       </Diagram>
