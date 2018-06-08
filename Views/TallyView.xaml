@@ -12,6 +12,6 @@
             <RowDefinition Height="4*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <DataGrid HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto"/>
+        
     </Grid>
 </UserControl>

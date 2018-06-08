@@ -29,7 +29,39 @@
         <Style x:Key="DefaultButton" TargetType="Button">
             
         </Style>
+        <!-- TabPanel Style -->
+        <Style TargetType="{x:Type TabControl}">
+            <Setter Property="Background" Value="{StaticResource WindowBackground}"></Setter>
+        </Style>
         
+        <!-- TabItem Style -->
+        <Style TargetType="TabItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <StackPanel Name="Panel" Width="50" Background="{StaticResource WindowBackground}">
+                            <Border Name="PanelBorder" BorderBrush="{StaticResource WindowBackground}" BorderThickness="5, 0, 0, 0">
+                                <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Height="50" />
+                            </Border>
+                        </StackPanel>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Panel" Property="Background" Value="{StaticResource ContentForeground}" />
+                                <Setter TargetName="PanelBorder" Property="BorderBrush" Value="{StaticResource Accent}" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="Panel" Property="Background" Value="{StaticResource WindowBackground}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
         <!-- DockPanel Button Style -->
         <Style x:Key="DockPanelButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -50,8 +82,9 @@
 
                                     <Style.Triggers>
                                         <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="BorderBrush" Value="{StaticResource Accent}"></Setter>
+                                            <Setter Property="BorderBrush" Value="{StaticResource Accent}" />
                                         </Trigger>
+                                        
                                     </Style.Triggers>
                                 </Style>
                             </Border.Style>
@@ -60,6 +93,10 @@
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="{StaticResource ContentForeground}" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="{StaticResource ContentForeground}" />
+                                <Setter Property="BorderBrush" Value="{StaticResource Accent}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
